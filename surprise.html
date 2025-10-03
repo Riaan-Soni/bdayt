@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Surprise - Tisha's Birthday</title>
+    <meta name="description" content="Something special just for you on your birthday">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-pink: #e91e63;
+            --primary-dark: #ad1457;
+            --birthday-secondary: #ffc107;
+            --birthday-accent: #9c27b0;
+            --turquoise: #26a69a;
+            --warm-orange: #ff9800;
+            --dark-purple: #3f2b69;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #fff9c4 100%);
+            min-height: 100vh;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .text-dark-purple {
+            color: var(--dark-purple);
+        }
+
+        .text-primary-pink {
+            color: var(--primary-pink);
+        }
+
+        .bg-rainbow-gradient {
+            background: linear-gradient(135deg, var(--primary-pink), var(--birthday-accent), var(--turquoise));
+        }
+
+        .floating-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-pink);
+            border-bottom-color: var(--primary-pink);
+        }
+
+        .nav-link.active {
+            color: var(--dark-purple);
+            border-bottom-color: var(--primary-pink);
+        }
+
+        .gift-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gift-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .gift-icon {
+            animation: bounce-icon 2s infinite;
+        }
+
+        @keyframes bounce-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 400px;
+            margin: 1rem;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-btn:hover {
+            color: var(--primary-pink);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Decorations -->
+    <div class="floating-decoration" style="top: 10%; left: 10%; animation-delay: 0s;">🎈</div>
+    <div class="floating-decoration" style="top: 20%; right: 20%; animation-delay: 0.5s;">🎉</div>
+    <div class="floating-decoration" style="top: 40%; left: 25%; animation-delay: 1s;">✨</div>
+    <div class="floating-decoration" style="bottom: 40%; right: 10%; animation-delay: 1.5s;">🎂</div>
+    <div class="floating-decoration" style="bottom: 20%; left: 20%; animation-delay: 2s;">🎁</div>
+    <div class="floating-decoration" style="top: 60%; right: 33%; animation-delay: 2.5s;">🌟</div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🎂</span>
+                    <h1 class="font-poppins font-bold text-xl text-dark-purple">Tisha's Birthday</h1>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                    <a href="memories.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>📸</span>
+                        <span>Memories</span>
+                    </a>
+                    <a href="wishes.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>💝</span>
+                        <span>Wishes</span>
+                    </a>
+                    <a href="surprise.html" class="nav-link active font-medium flex items-center space-x-2">
+                        <span>🎁</span>
+                        <span>Surprise</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <section class="py-16 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="font-poppins font-bold text-4xl md:text-5xl text-dark-purple mb-4">
+                    Special Surprise! 🎁
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Something special just for you on your birthday
+                </p>
+            </div>
+
+            <!-- Gift Boxes Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <a href="https://pin.it/407jDmRE7" target="_blank" class="gift-card fade-in" style="text-decoration:none;">
+                    <div class="relative overflow-hidden rounded-3xl shadow-xl">
+                        <img src="c43b4e80bf9ec2cd35c4a4f18ccb7ac3.jpg&auto=format&fit=crop&w=800&h=600" 
+                             alt="😉😚" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-500/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-poppins font-semibold text-lg">Gift #1</h4>
+                            <p class="text-sm opacity-90">Click to open!</p>
+                        </div>
+                        <div class="gift-icon absolute top-4 right-4 text-white text-2xl" style="animation-delay: 0s;">🎁</div>
+                    </div>
+                </a>
+
+                <a href="javascript:void(0)" onclick="downloadFile()" class="gift-card fade-in" style="animation-delay: 0.1s; text-decoration:none;">
+                    <div class="relative overflow-hidden rounded-3xl shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Colorful gift boxes stacked together" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-yellow-400/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="font-poppins font-semibold text-lg">Gift #2</h4>
+                            <p class="text-sm opacity-90">Click to open!</p>
+                        </div>
+                        <div class="gift-icon absolute top-4 right-4 text-white text-2xl" style="animation-delay: 0.5s;">💝</div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Special Birthday Message -->
+            <div class="bg-rainbow-gradient rounded-3xl p-8 md:p-12 text-center text-white fade-in" style="animation-delay: 0.4s;">
+                <h3 class="font-poppins font-bold text-2xl md:text-3xl mb-6">
+                    A Special Message Just for You! 💕
+                </h3>
+                <div class="max-w-3xl mx-auto space-y-4 text-lg leading-relaxed">
+                    <p>
+                        Dear Tisha, on this wonderful day that celebrates YOU, we want you to know how truly special you are. 
+                        Your kindness, your laughter, your beautiful spirit - they all make the world a brighter place.
+                    </p>
+                    <p>
+                        As you blow out your candles this year, may every wish you make come true. May this new chapter 
+                        of your life be filled with incredible adventures, deep friendships, boundless joy, and all the 
+                        love your heart can hold.
+                    </p>
+                    <p class="font-semibold text-xl">
+                        Happy Birthday, beautiful soul! Here's to you and all the magic you bring into this world! ✨🎂🎉
+                    </p>
+                </div>
+                <div class="mt-8 text-5xl bounce-slow">🎊 💖 🎊</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals for Gifts -->
+    <div id="giftModal1" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('giftModal1')">&times;</button>
+            <div class="text-6xl mb-4 bounce-slow">🌟</div>
+            <h3 class="font-poppins font-bold text-2xl text-dark-purple mb-4">A Year of Adventures!</h3>
+            <p class="text-gray-600 leading-relaxed">
+                May this year bring you amazing new experiences, exciting adventures, and beautiful discoveries!
+            </p>
+        </div>
+    </div>
+
+    <div id="giftModal2" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('giftModal2')">&times;</button>
+            <div class="text-6xl mb-4 bounce-slow">💝</div>
+            <h3 class="font-poppins font-bold text-2xl text-dark-purple mb-4">Endless Love & Joy!</h3>
+            <p class="text-gray-600 leading-relaxed">
+                Wishing you a year filled with love, laughter, and all the happiness your heart can hold!
+            </p>
+        </div>
+    </div>
+
+
+
+    <script>
+        function openGift(giftNumber) {
+            const modal = document.getElementById(`giftModal${giftNumber}`);
+            modal.classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+            }
+        }
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal.show');
+                modals.forEach(modal => modal.classList.remove('show'));
+            }
+        });
+
+        function downloadFile() {
+            const text = `Dear Tisha,
+
+Wishing you the happiest of birthdays! 
+May your day be filled with joy, laughter, and wonderful surprises.
+May all your dreams come true!
+
+Ur bbg will be always here to support and love you. Through everything hehe. 
+
+And dont think too much just enjoy your day to the fullest.
+
+No matter the circumstances, you are amazing just the way you are and always loved by me.
+
+With love,
+ur bbg 💖`;
+
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', 'birthday_wishes.txt');
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+    </script>
+</body>
+</html>
