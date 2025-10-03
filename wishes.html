@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes - Tisha's Birthday</title>
+    <meta name="description" content="Heartfelt messages and warm wishes from everyone who cares about you">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-pink: #e91e63;
+            --primary-dark: #ad1457;
+            --birthday-secondary: #ffc107;
+            --birthday-accent: #9c27b0;
+            --turquoise: #26a69a;
+            --warm-orange: #ff9800;
+            --dark-purple: #3f2b69;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #fff9c4 100%);
+            min-height: 100vh;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .text-dark-purple {
+            color: var(--dark-purple);
+        }
+
+        .text-primary-pink {
+            color: var(--primary-pink);
+        }
+
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, var(--primary-pink), var(--primary-dark));
+        }
+
+        .bg-secondary-gradient {
+            background: linear-gradient(135deg, var(--birthday-secondary), var(--warm-orange));
+        }
+
+        .floating-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-pink);
+            border-bottom-color: var(--primary-pink);
+        }
+
+        .nav-link.active {
+            color: var(--dark-purple);
+            border-bottom-color: var(--primary-pink);
+        }
+
+        .wish-card {
+            transition: all 0.3s ease;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-pink), var(--primary-dark));
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px -12px rgba(233, 30, 99, 0.4);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 0 4px rgba(233, 30, 99, 0.1);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Decorations -->
+    <div class="floating-decoration" style="top: 10%; left: 10%; animation-delay: 0s;">🎈</div>
+    <div class="floating-decoration" style="top: 20%; right: 20%; animation-delay: 0.5s;">🎉</div>
+    <div class="floating-decoration" style="top: 40%; left: 25%; animation-delay: 1s;">✨</div>
+    <div class="floating-decoration" style="bottom: 40%; right: 10%; animation-delay: 1.5s;">🎂</div>
+    <div class="floating-decoration" style="bottom: 20%; left: 20%; animation-delay: 2s;">🎁</div>
+    <div class="floating-decoration" style="top: 60%; right: 33%; animation-delay: 2.5s;">🌟</div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🎂</span>
+                    <h1 class="font-poppins font-bold text-xl text-dark-purple">Tisha's Birthday</h1>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                    <a href="memories.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>📸</span>
+                        <span>Memories</span>
+                    </a>
+                    <a href="wishes.html" class="nav-link active font-medium flex items-center space-x-2">
+                        <span>💝</span>
+                        <span>Wishes</span>
+                    </a>
+                    <a href="surprise.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>🎁</span>
+                        <span>Surprise</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <section class="py-16 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="font-poppins font-bold text-4xl md:text-5xl text-dark-purple mb-4">
+                    Birthday Wishes 💝
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Heartfelt messages and warm wishes from everyone who cares about you
+                </p>
+            </div>
+
+            <div class="wish-card rounded-3xl p-8 shadow-xl bg-secondary-gradient text-white fade-in" style="animation-delay: 0.1s;">
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+                        <div class="flex-1">
+                            <p class="text-white/90 leading-relaxed">
+                                Dearest Tisha, on your special day, we want you to know how much you mean to us! Your kindness, laughter, and beautiful spirit make every day brighter. Here's to another year of adventures, dreams coming true, and lots of cake! 🎂✨
+                            </p>
+                            <div class="flex items-center mt-4 text-sm text-white/70">
+                                <span>⭐</span>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="wish-card rounded-3xl p-8 shadow-xl bg-white text-dark-purple fade-in" style="animation-delay: 0.2s;">
+                               <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+                        <div class="flex-1">
+                            <p class="text-gray-600 leading-relaxed">
+                                Happy Birthday to one of the most incredible people I know! 🌟 Tisha, you have this amazing ability to make everyone around you feel special and loved. I hope your birthday is as wonderful and extraordinary as you are! Can't wait to celebrate with you! 🎈
+                            </p>
+                            <div class="flex items-center mt-4 text-sm text-gray-500">
+                                <span>🎂</span>
+                            </div>
+                        </div>
+                </div>
+
+                            <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+                <div class="wish-card rounded-3xl p-8 shadow-xl bg-primary-gradient text-white fade-in" style="animation-delay: 0.3s;">
+                        <div class="flex-1">
+                            <p class="text-white/90 leading-relaxed">
+                                To the most amazing Tisha on her special day! 💖 Your smile lights up every room you enter, and your heart is as beautiful as your soul. May this birthday mark the beginning of your best year yet, filled with love, laughter, and all your heart desires! 🎊
+                            </p>
+                            <div class="flex items-center mt-4 text-sm text-white/70">
+                                <span>🎁</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+             <!-- Add Your Wish Section 
+            <div class="bg-gray-50 rounded-3xl p-8 md:p-12 fade-in" style="animation-delay: 0.4s;">
+                <h3 class="font-poppins font-bold text-2xl text-dark-purple mb-6 text-center">
+                    Leave Your Birthday Wish 💌
+                </h3>
+                <form class="max-w-2xl mx-auto space-y-6" onsubmit="submitWish(event)">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" 
+                               placeholder="Your Name" 
+                               class="form-input px-6 py-4 rounded-2xl w-full"
+                               required>
+                        <input type="email" 
+                               placeholder="Your Email" 
+                               class="form-input px-6 py-4 rounded-2xl w-full"
+                               required>
+                    </div>
+                    <textarea placeholder="Write your birthday message for Tisha..." 
+                              rows="4" 
+                              class="form-input px-6 py-4 rounded-2xl w-full resize-none"
+                              required></textarea>
+                    <div class="text-center">
+                        <button type="submit" 
+                                class="btn-primary text-white px-8 py-4 rounded-full font-poppins font-semibold">
+                            Send Birthday Wish 💝
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function submitWish(event) {
+            event.preventDefault();
+            alert('Thank you for your beautiful birthday wish! 💕\n\nYour message has been sent to Tisha!');
+            event.target.reset();
+        }
+    </script> -->
+</body>
+</html>
