@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Memories - Tisha's Birthday</title>
+    <meta name="description" content="A collection of special moments and celebrations that make life beautiful">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-pink: #e91e63;
+            --primary-dark: #ad1457;
+            --birthday-secondary: #ffc107;
+            --birthday-accent: #9c27b0;
+            --turquoise: #26a69a;
+            --warm-orange: #ff9800;
+            --dark-purple: #3f2b69;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #fff9c4 100%);
+            min-height: 100vh;
+        }
+
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .text-dark-purple {
+            color: var(--dark-purple);
+        }
+
+        .text-primary-pink {
+            color: var(--primary-pink);
+        }
+
+        .bg-rainbow-gradient {
+            background: linear-gradient(135deg, var(--primary-pink), var(--birthday-accent), var(--turquoise));
+        }
+
+        .floating-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-pink);
+            border-bottom-color: var(--primary-pink);
+        }
+
+        .nav-link.active {
+            color: var(--dark-purple);
+            border-bottom-color: var(--primary-pink);
+        }
+
+        .photo-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .photo-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-card:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-title {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-card:hover .photo-title {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Decorations -->
+    <div class="floating-decoration" style="top: 10%; left: 10%; animation-delay: 0s;">🎈</div>
+    <div class="floating-decoration" style="top: 20%; right: 20%; animation-delay: 0.5s;">🎉</div>
+    <div class="floating-decoration" style="top: 40%; left: 25%; animation-delay: 1s;">✨</div>
+    <div class="floating-decoration" style="bottom: 40%; right: 10%; animation-delay: 1.5s;">🎂</div>
+    <div class="floating-decoration" style="bottom: 20%; left: 20%; animation-delay: 2s;">🎁</div>
+    <div class="floating-decoration" style="top: 60%; right: 33%; animation-delay: 2.5s;">🌟</div>
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🎂</span>
+                    <h1 class="font-poppins font-bold text-xl text-dark-purple">Tisha's Birthday</h1>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                    <a href="memories.html" class="nav-link active font-medium flex items-center space-x-2">
+                        <span>📸</span>
+                        <span>Memories</span>
+                    </a>
+                    <a href="wishes.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>💝</span>
+                        <span>Wishes</span>
+                    </a>
+                    <a href="surprise.html" class="nav-link font-medium text-gray-600 flex items-center space-x-2">
+                        <span>🎁</span>
+                        <span>Surprise</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <section class="py-16 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="font-poppins font-bold text-4xl md:text-5xl text-dark-purple mb-4">
+                    Beautiful Memories 📸
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    A collection of special moments and celebrations that make life beautiful
+                </p>
+            </div>
+
+            <!-- Photo Gallery Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 auto-rows-auto">
+                <div class="photo-card fade-in">
+                    <div class="relative overflow-hidden rounded-3xl shadow-xl aspect-auto">
+                        <img src="Madam ka birthday(if she is still my madam)/1000072387.jpg" 
+                             class="w-full h-auto object-contain"
+                             onload="this.parentElement.style.height = this.height + 'px';">
+                        <div class="photo-overlay absolute inset-0"></div>
+                        <div class="photo-title absolute bottom-4 left-4 text-white">
+                            <h4 class="font-poppins font-semibold">Birthday Celebrations</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card fade-in" style="animation-delay: 0.1s;">
+                    <div class="relative overflow-hidden rounded-3xl shadow-xl aspect-auto">
+                        <img src="Madam ka birthday(if she is still my madam)/1000072389.jpg" 
+                             class="w-full h-auto object-contain"
+                             onload="this.parentElement.style.height = this.height + 'px';">
+                        <div class="photo-overlay absolute inset-0"></div>
+                        <div class="photo-title absolute bottom-4 left-4 text-white">
+                            <h4 class="font-poppins font-semibold">Sweet Moments</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="relative overflow-hidden rounded-3xl shadow-xl aspect-auto">
+                        <img src="Madam ka birthday(if she is still my madam)/1000072388.jpg" 
+                             class="w-full h-auto object-contain"
+                             onload="this.parentElement.style.height = this.height + 'px';">
+                        <div class="photo-overlay absolute inset-0"></div>
+                        <div class="photo-title absolute bottom-4 left-4 text-white">
+                            <h4 class="font-poppins font-semibold">Party Vibes</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Quote -->
+            <div class="bg-rainbow-gradient rounded-3xl p-8 md:p-12 text-center text-white fade-in" style="animation-delay: 0.6s;">
+                <h3 class="font-poppins font-bold text-2xl md:text-3xl mb-4">
+                    "The best birthdays are filled with love, laughter, and unforgettable moments" ✨
+                </h3>
+                <p class="text-lg opacity-90">Here's to creating many more beautiful memories together!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.photo-card img');
+        
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                const container = this.parentElement;
+                container.style.height = this.height + 'px';
+            });
+        });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                images.forEach(img => {
+                    const container = img.parentElement;
+                    container.style.height = img.height + 'px';
+                });
+            }, 250);
+        });
+    });
+    </script>
+</body>
+</html>
+
